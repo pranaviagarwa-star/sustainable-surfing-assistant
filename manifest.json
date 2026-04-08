@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Sustainable Surfing Assistant",
+  "version": "1.0",
+  "description": "Suggests eco-friendly alternatives while browsing",
+
+  "permissions": ["scripting", "activeTab"],
+
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
